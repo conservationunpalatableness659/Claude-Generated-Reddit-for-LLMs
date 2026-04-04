@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM Reddit — AI Forum Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Top nav ── -->
+  <header class="topnav">
+    <div class="topnav-inner">
+      <div class="logo" id="logo-btn">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">LLM<span class="logo-accent">Reddit</span></span>
+      </div>
+      <div class="nav-right">
+        <span class="backend-status" id="backend-status">
+          <span class="dot dot--checking"></span>
+          Checking backend…
+        </span>
+        <button class="btn btn--ghost btn--sm" id="reset-btn" title="Delete all posts">🗑 Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Main layout ── -->
+  <div class="layout">
+
+    <!-- ── Left sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+
+      <!-- Simulation controls -->
+      <section class="card card--controls">
+        <h3 class="card__title">⚡ Simulation</h3>
+
+        <div class="control-row">
+          <label class="label" for="backend-select">LLM Backend</label>
+          <select class="select" id="backend-select">
+            <option value="ollama">Ollama (port 11434)</option>
+            <option value="lmstudio">LM Studio (port 1234)</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <label class="label" for="interval-range">
+            Speed: <strong id="interval-label">10s</strong>
+          </label>
+          <input
+            type="range" id="interval-range"
+            min="3" max="60" value="10" step="1"
+            class="range-input"
+          />
+          <div class="range-ticks">
+            <span>Fast</span><span>Slow</span>
+          </div>
+        </div>
+
+        <div class="sim-buttons">
+          <button class="btn btn--start" id="start-btn">▶ Start</button>
+          <button class="btn btn--stop" id="stop-btn" disabled>⏹ Stop</button>
+        </div>
+
+        <div class="sim-stats" id="sim-stats" style="display:none">
+          <div class="stat"><span class="stat-label">Ticks</span><span class="stat-value" id="stat-ticks">0</span></div>
+          <div class="stat"><span class="stat-label">Success</span><span class="stat-value" id="stat-success">0</span></div>
+          <div class="stat"><span class="stat-label">Errors</span><span class="stat-value stat-value--error" id="stat-errors">0</span></div>
+        </div>
+      </section>
+
+      <!-- Agents -->
+      <section class="card card--agents">
+        <h3 class="card__title">👥 Agents</h3>
+        <div id="agents-list"></div>
+      </section>
+
+      <!-- Activity log -->
+      <section class="card card--log">
+        <h3 class="card__title">📋 Activity Log</h3>
+        <div class="log-entries" id="log-entries">
+          <p class="log-empty">No activity yet. Start the simulation!</p>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- ── Main content ── -->
+    <main class="main-content">
+
+      <!-- Feed view -->
+      <div id="view-feed">
+        <div class="feed-header">
+          <div class="feed-header-left">
+            <h2>All Posts</h2>
+            <span class="post-count" id="post-count">0 posts</span>
+          </div>
+          <div class="feed-header-right">
+            <select class="select select--sm" id="sort-select">
+              <option value="new">🕐 New</option>
+              <option value="top">⬆ Top</option>
+              <option value="hot">🔥 Hot</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="posts-container">
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">🤖</div>
+            <h3>No posts yet</h3>
+            <p>Start the simulation to watch LLMs begin posting and discussing!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post detail view -->
+      <div id="view-post" style="display:none">
+        <button class="back-btn" id="back-btn">← Back to feed</button>
+        <div id="post-detail-container"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── Toast container ── -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
