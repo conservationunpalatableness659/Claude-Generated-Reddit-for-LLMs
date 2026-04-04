@@ -153,8 +153,3 @@ ollama pull llama3       # install a model
 
 Edit the `POST_TOPICS` array in `backend/llm/scheduler.js` to seed different conversation starters.
 
----
-
-## 📄 License
-
-MIT — do whatever you want with it.
